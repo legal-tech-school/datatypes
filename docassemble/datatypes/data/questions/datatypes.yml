@@ -1,0 +1,56 @@
+---
+question: |
+  What is your name?
+fields:
+  - first: f_name
+  - last: l_name
+---
+question: |
+  When were you born?
+fields:
+  - Birth date: dob_here
+    datatype: date
+---
+question: |
+  How many siblings do you have?
+fields: 
+  - Number: number_of_sibs
+    datatype: integer
+---
+question: |
+  How much money do you have in your pockets?
+fields: 
+  - Dollars and cents: money_amt
+    datatype: currency
+---
+question: |
+  What is your email address?
+fields: 
+  - Email: email_address
+    datatype: email
+---
+question: |
+  What is your favorite state?
+fields: 
+  - State: fav_state
+    code: |
+      states_list()
+---
+question: |
+  What do you like more - peanuts or pecans?
+fields: 
+  - Answer here: peanuts_or_pecans
+    choices: 
+      - Peanuts
+      - Pecans
+---
+question: |
+  Here are your responses:
+subquestion: |
+  Hello ${f_name} ${l_name}. You were born on ${dob_here},
+  you have ${number_of_sibs} siblings, your favorite state is
+  ${fav_state}, your favorite nuts are ${peanuts_or_pecans}, your email address is 
+  ${email_address}, and you have $ ${money_amt} in your pockets. 
+  
+mandatory: true  
+  
